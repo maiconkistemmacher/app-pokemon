@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      POKEMON APP
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card *ngFor="let pokemon of pokemons; let i = index">
+    <ion-card-header>
+      <ion-card-title>{{pokemon.name}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="card">
+      <img width="150" height="150" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/{{i + 1}}.svg">
+      <img width="50" height="50" src="/assets/icon/favicon.png" alt="" (click)="showPokemon(pokemon.name, i + 1)">
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

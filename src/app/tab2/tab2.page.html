@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      POKEMON APP
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card *ngFor="let pokemon of pokemons; let i = index">
+    <ion-card-header>
+      <ion-card-title>{{pokemon.nome}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="card">
+      <img width="150" height="150" src="{{pokemon.link}}">
+      <img width="50" height="50" src="/assets/icon/favicon1.png" alt="" (click)="removePokemon(i + 1)">
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
